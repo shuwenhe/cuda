@@ -1,0 +1,7 @@
+hello_cuda
+*.txt
+*.log
+a.out
+main
+cnf.h
+config.h
