@@ -1,1 +1,2 @@
 https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html
+conda install cuda -c nvidia
