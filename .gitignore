@@ -1,3 +1,4 @@
+*.out
 hello
 *.txt
 *.log

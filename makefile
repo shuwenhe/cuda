@@ -1,4 +1,4 @@
-# Makefile for hello_cuda_fixed
+# Makefile for compiling all .cu files
 
 # 编译器
 NVCC = nvcc
@@ -6,17 +6,20 @@ NVCC = nvcc
 # 编译选项
 NVCC_FLAGS = -arch=native -O2 -Wno-deprecated-gpu-targets
 
-# 源文件与目标文件
-TARGET = hello
-SRC = hello.cu
+# 查找当前目录下所有 .cu 文件
+SRC = $(wildcard *.cu)
 
-# 默认目标：编译可执行程序
+# 将源文件名 (.cu) 转换为目标文件名 (.out)
+TARGET = $(SRC:.cu=.out)
+
+# 默认目标
 all: $(TARGET)
 
-$(TARGET): $(SRC)
+# 编译规则
+%.out: %.cu
 	$(NVCC) $(NVCC_FLAGS) $< -o $@
 
-# 清理构建产物
+# 清理目标
 clean:
 	rm -f $(TARGET)
 
