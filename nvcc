@@ -1,1 +1,3 @@
+https://developer.download.nvidia.com/compute/cuda/redist/cuda_nvcc/linux-x86_64/
 nvcc hello_cuda.cu -o hello_cuda
+
